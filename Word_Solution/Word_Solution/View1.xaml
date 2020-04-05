@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Word_Solution.View1">
+  <ContentView.Content>
+        <Grid>
+            <Frame BackgroundColor="Black" Opacity="0.6">
+                
+            </Frame>
+            <Frame VerticalOptions="Center" WidthRequest="200" HeightRequest="50"
+                BackgroundColor="White" HorizontalOptions="Center" 
+                Padding="0,20,0,20">
+                <ActivityIndicator IsRunning="True" Color="Black"/>
+            </Frame>
+        </Grid>
+  </ContentView.Content>
+</ContentView>

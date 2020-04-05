@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:Word_Solution"
+             SizeChanged="ContentPage_SizeChanged"
+             BackgroundColor="Black"
+             x:Class="Word_Solution.SearchPage" AutomationProperties.IsInAccessibleTree="True">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontAttributes" Value="Italic"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+            <Style x:Key="labelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Blue"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+            <Grid Padding="20,20,20,20" ColumnSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+        
+            <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                    <Frame BackgroundColor="Green" CornerRadius="10" 
+               Padding="7,2,7,3" BorderColor="White" VerticalOptions="Start"  HorizontalOptions="Start">
+                            <Label x:Name="Label1" Text="About"  TextColor="Red">
+
+                            </Label>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                        <Label x:Name="Label" TextColor="Blue" FontAttributes="Bold" FontSize="Medium" Text="WORD SOLUTION"
+                   HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" >
+                            <!--<Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="Android" Value="ArdleysHand-Regular.ttf#ArdleysHand"/>
+                                <On Platform="UWP" Value="Assets/Fonts/ArdleysHand-Regular.ttf#ArdleysHand"/>
+                            </OnPlatform>
+                        </Label.FontFamily>-->
+                    </Label>
+            </StackLayout>
+
+            <Frame  BorderColor="Red" Padding="20,0,20,0" Grid.Column="0" Grid.ColumnSpan="2"
+                 BackgroundColor="#EE4040" CornerRadius="23" Grid.Row="1" >
+                    <SearchBar x:Name="Keyword" TextChanged="Keyword_TextChanged" Placeholder="Enter your word here......" 
+                       PlaceholderColor="White" SearchButtonPressed="SearchBar_SearchButtonPressed"
+                       FontSize="Small" >
+                        <SearchBar.TextColor>
+                            <OnPlatform x:TypeArguments="Color">
+                                <On Platform="Android" Value="White"/>
+                                <On Platform="UWP" Value="Black"/>
+                            </OnPlatform>
+                        </SearchBar.TextColor>
+                    </SearchBar>
+            </Frame>
+                <StackLayout Grid.Row="2" Spacing="0">
+                    <Label HorizontalOptions="Start" Text="Maximum of 10 letters"/>
+                    <Label Text="Can't use wild cards (?.,/)" HorizontalOptions="Start"/>
+                    <Label Text="Speed is dependent of Device's capacity" HorizontalOptions="Start"/>
+                </StackLayout>
+                <Frame CornerRadius="20" BackgroundColor="#C50C0C" Grid.Column="0" Grid.ColumnSpan="2"
+                   BorderColor="Blue" Grid.Row="3">
+                    <ScrollView>
+                    <StackLayout>
+                    
+                    <Label x:Name="result" Text="Result" FontSize="Medium" HorizontalOptions="Center" TextColor="Blue" Margin="0,0,0,20"/>
+                        
+                        <Grid RowSpacing="20" >
+                            <Grid.RowDefinitions >
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                                <StackLayout HorizontalOptions="Center" Grid.Row="0" Grid.Column="0">
+                                        <Label Text="10 Letters" Style="{StaticResource Key=labelStyle}"/>
+                                        <Label x:Name="R0C0" />
+                                    </StackLayout>
+                        <StackLayout HorizontalOptions="Center" Grid.Row="0" Grid.Column="1">
+                                        <Label Text="9 Letters" Style="{StaticResource Key=labelStyle}"/>
+                                        <Label x:Name="R0C1" />
+                                    </StackLayout>
+                        <StackLayout Grid.Row="0" Grid.Column="2" HorizontalOptions="Center">
+                                        <Label Text="8 Letters" Style="{StaticResource Key=labelStyle}"/>
+                                        <Label x:Name="R0C2" />
+                                    </StackLayout>
+                        <StackLayout HorizontalOptions="Center" Grid.Row="1" Grid.Column="0">
+                                        <Label Text="7 Letters" Style="{StaticResource Key=labelStyle}"/>
+                                        <Label x:Name="R1C0" />
+                                    </StackLayout>
+                        <StackLayout HorizontalOptions="Center" Grid.Row="1"  Grid.Column="1">
+                                        <Label Text="6 Letters" Style="{StaticResource Key=labelStyle}"/>
+                                        <Label x:Name="R1C1" />
+                                    </StackLayout>
+                        <StackLayout Grid.Row="1" Grid.Column="2" HorizontalOptions="Center">
+                                        <Label Text="5 Letters" Style="{StaticResource Key=labelStyle}"/>
+                                        <Label x:Name="R1C2" />
+                                    </StackLayout>
+                        <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center">
+                                        <Label Text="4 Letters" Style="{StaticResource Key=labelStyle}"/>
+                                        <Label x:Name="R2C0" />
+                                    </StackLayout>
+                        <StackLayout Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"  HorizontalOptions="Center">
+                                        <Label Text="3 Letters" Style="{StaticResource Key=labelStyle}"/>
+                                        <Label x:Name="R2C1" />
+                                    </StackLayout>
+                        </Grid>
+
+                </StackLayout>
+                    </ScrollView>
+                </Frame>
+                <local:View1 IsVisible="False" x:Name="act" Grid.RowSpan="4" Grid.ColumnSpan="2"/>
+            <local:About x:Name="About" IsVisible="True" Grid.RowSpan="4" Grid.ColumnSpan="2"/>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

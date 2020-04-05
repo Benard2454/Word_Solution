@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             SizeChanged="ContentView_SizeChanged"
+             BackgroundColor="Black"
+             x:Class="Word_Solution.About">
+  
+  <ContentView.Content>
+        <Grid>
+            <Label x:Name="head" HorizontalOptions="Center" VerticalOptions="Start" Text="  LOSUNG TECH  "  TextColor="Blue"/>
+            <Frame CornerRadius="12" BackgroundColor="Green" Padding="3,3,3,3" BorderColor="White" VerticalOptions="Start" HorizontalOptions="Start">
+                <Image Source="back.png"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Button_Clicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Frame BackgroundColor="#C50C0C" BorderColor="Blue" Margin="30,60,30,30" CornerRadius="30">
+                <ScrollView VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                    <StackLayout >
+                        <Label HorizontalOptions="Start" Text="This application is built by losung tech for the purpose of unscrambling words"/>
+                        <Label HorizontalOptions="Start" Text="How to Use: Input the letters to be unscrambled then press the search button on you keyboard"/>
+                        <Label HorizontalOptions="Start" Text="Need machine learning or artificial Intelligence model?"/>
+                        <Label HorizontalOptions="Start" Text="Want custom developed mobile applications (iOS, Android, Windows)?"/>
+                        <Label HorizontalOptions="Start" TextColor="White" Text="  "/>
+
+                        <Label HorizontalOptions="Start">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Contact us at "/>
+                                    <Span Text="d.losungen@gmail.com " FontAttributes="Bold" />
+                                    <Span Text="or "/>
+                                    <Span Text="+2348140122664" FontAttributes="Bold"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+                </ScrollView>
+                
+            </Frame>
+            
+        </Grid>
+      
+  </ContentView.Content>
+</ContentView>
